@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <title>Color Test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=0, user-scalable=0">
+
+        <link rel="manifest" href="manifest.json">
+
+        <meta name="apple-mobile-web-app-title" content="Giphygram">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="apple-touch-startup-image" href="images/launch.png">
+
+        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/icons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/icons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/icons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/icons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon-precomposed" sizes="60x60" href="images/icons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/icons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="images/icons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/icons/apple-touch-icon-152x152.png">
+        <link rel="icon" type="image/png" href="images/icons/favicon-196x196.png" sizes="196x196">
+        <link rel="icon" type="image/png" href="images/icons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="images/icons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="images/icons/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="images/icons/favicon-128.png" sizes="128x128">
+
+        <meta name="msapplication-TileColor" content="#2D91F8">
+        <meta name="msapplication-TileImage" content="images/icons/mstile-144x144.png">
+        <meta name="msapplication-square70x70logo" content="images/icons/mstile-70x70.png">
+        <meta name="msapplication-square150x150logo" content="images/icons/mstile-150x150.png">
+        <meta name="msapplication-wide310x150logo" content="images/icons/mstile-310x150.png">
+        <meta name="msapplication-square310x310logo" content="images/icons/mstile-310x310.png">
+
+        <link rel="stylesheet" href="vendor/bootstrap.min.css">
+        <script defer src="vendor/jquery.min.js"></script>
+        <script defer src="main.js"></script>
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+            .list-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            .list {
+                border: 1px solid #ccc;
+                padding: 10px;
+                width: 400px;
+            }
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+            span {
+                margin: 5px 0;
+                padding: 10px;
+                text-align: center;
+                font-size: 24px; text-transform: uppercase; font-weight: bold; letter-spacing: 0.2px ; line-height: 31px;
+                color: white; /* Default color */
+            }
+            button {
+                margin: 20px 0;
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="list-container" id="listContainer"></div>
+        <button onclick="generateRandomLists()" style="background-color: blue; color: #fff; border: none; cursor: pointer;">Generate Random Lists</button>
+        
+    
+        <script>
+            const colors = [ "#FF4500", "#FFD700", "#FF00FF",   "#32CD32",  "#0000CD", "#FF0000", "#000000" , "#bcbcbc",   "#32CD32",  "#0000CD", "#FF0000"];
+    
+            const colors1 = [ "Red", "Green", "Grey",   "Brown",  "Black", "Yellow", "Orange", "Purple",  "Pink","Red", "Yellow","Orange", "Green"];
+    
+            function generateRandomLists() {
+                const container = document.getElementById("listContainer");
+                container.innerHTML = ""; // Clear the container
+    
+                const randomColor = [...colors].sort(() => Math.random() - 0.5);
+                const randomColorText = [...colors1].sort(() => Math.random() - 0.5);
+     
+                const listDiv = document.createElement("div");
+                    listDiv.className = "list";
+    
+                    const ul = document.createElement("ul");
+                for (let i = 0; i < 20; i++) {
+                   
+                    
+                      
+                        const li = document.createElement("span");
+                        li.textContent = randomColorText[i]+", ";
+                        li.style.color = randomColor[i].toLowerCase();
+                       // li.style.color = randomColor.toLowerCase() === "black" ? "white" : "black";
+                        ul.appendChild(li);
+                  
+    
+                    listDiv.appendChild(ul);
+                    container.appendChild(listDiv);
+                }
+            }
+    
+            generateRandomLists();
+        </script>
+    </body>
+
+</html>
