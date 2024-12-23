@@ -1,6 +1,6 @@
 {
-  "name": "Colors",
-  "short_name": "Colors",
+  "name": "Giphygram",
+  "short_name": "Giphygram",
   "theme_color": "#0082f9",
   "background_color": "#ffffff",
   "display": "standalone",
