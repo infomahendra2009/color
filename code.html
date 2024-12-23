@@ -181,10 +181,7 @@
                 "21", "22", "23", "24", "25"
             ];
     
-            // Get random text
-            function getRandomText() {
-                return randomTexts[Math.floor(Math.random() * randomTexts.length)];
-            }
+        
             function getRandomColor() {
                 const letters = '0123456789ABCDEF';
                 let color = '#';
@@ -202,23 +199,23 @@
             return array;
         }
 
-        
+
             // Generate grid
             function generateGrid() {
                 grid.innerHTML = ''; // Clear existing grid
                 const shuffledTexts = shuffleArray([...randomTexts]); // Create a shuffled copy of the array
-                for (let i = 1; i <= 30; i++) {
-                    const cell = document.createElement('div');
-                    cell.className = 'cell';
-                    cell.textContent = shuffledTexts[i % shuffledTexts.length]; // Ensure unique texts
-                    cell.style.color = getRandomColor(); // Set random text color
-                    grid.appendChild(cell);
-                }
+                for (let i = 0; i < 25; i++) {
+                const cell = document.createElement('div');
+                cell.className = 'cell';
+                cell.textContent = shuffledTexts[i]; // Assign unique text
+                cell.style.color = getRandomColor(); // Set random text color
+                grid.appendChild(cell);
+            }
             }
     
             // Start 30-second timer
             function startTimer() {
-                let countdown = 30;
+                let countdown = 50;
                 clearInterval(timerInterval);
                 timerInterval = setInterval(() => {
                     countdown--;
