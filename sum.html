@@ -148,7 +148,7 @@
 
         // Function to generate a random addition question
         function generateQuestion() {
-            num1 = Math.floor(Math.random() * 10) + 1; // Random number between 1 and 100
+            num1 = Math.floor(Math.random() * 100) + 1; // Random number between 1 and 100
             num2 = Math.floor(Math.random() * 10) + 1; // Random number between 1 and 100
             document.getElementById('question').innerText = `What is ${num1} + ${num2}?`;
             document.getElementById('result').innerText = ''; 
