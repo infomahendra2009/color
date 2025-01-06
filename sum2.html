@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <title>Giphygram</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=0, user-scalable=0">
+
+        <link rel="manifest" href="manifest.json">
+
+        <meta name="apple-mobile-web-app-title" content="Giphygram">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="apple-touch-startup-image" href="images/launch.png">
+
+        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/icons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/icons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/icons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/icons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon-precomposed" sizes="60x60" href="images/icons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/icons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="images/icons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/icons/apple-touch-icon-152x152.png">
+        <link rel="icon" type="image/png" href="images/icons/favicon-196x196.png" sizes="196x196">
+        <link rel="icon" type="image/png" href="images/icons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="images/icons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="images/icons/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="images/icons/favicon-128.png" sizes="128x128">
+
+        <meta name="msapplication-TileColor" content="#2D91F8">
+        <meta name="msapplication-TileImage" content="images/icons/mstile-144x144.png">
+        <meta name="msapplication-square70x70logo" content="images/icons/mstile-70x70.png">
+        <meta name="msapplication-square150x150logo" content="images/icons/mstile-150x150.png">
+        <meta name="msapplication-wide310x150logo" content="images/icons/mstile-310x150.png">
+        <meta name="msapplication-square310x310logo" content="images/icons/mstile-310x310.png">
+ 
+        <script      src="vendor/jquery.min.js"></script>
+        <script defer src="main.js"></script>
+
+        <style>
+            .spinner {
+                animation-name: spin;
+                animation-duration: 2000ms;
+                animation-iteration-count: infinite; 
+                animation-timing-function: linear;
+            }
+            @keyframes spin {
+                from { transform:rotate(0deg); }
+                to {transform:rotate(360deg); }
+            }
+        </style>  <style>
+            .spinner {
+                animation-name: spin;
+                animation-duration: 2000ms;
+                animation-iteration-count: infinite; 
+                animation-timing-function: linear;
+            }
+            @keyframes spin {
+                from { transform:rotate(0deg); }
+                to {transform:rotate(360deg); }
+            }
+            #result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        img {
+            margin-top: 20px;
+            display: none;
+            width: 200px;
+            height: auto;
+        }
+        .error{ color: red;}
+        .success{ color: green;}
+        input,button {padding: 5px;}
+        #answer{ }
+
+        </style>
+  
+
+
+    <!-- Bootstrap Css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+
+    </head>
+
+    <body data-sidebar="dark">
+
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+    
+            <header id="page-topbar">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box">
+    
+                            <a href="index.html" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="assets/images/logo-sm-light.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="assets/images/logo-light.png" alt="" height="20">
+                                </span>
+                            </a>
+                        </div>
+    
+                        <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">
+                            <i class="mdi mdi-backburger"></i>
+                        </button>
+    
+                    </div>
+    
+                    <div class="d-flex">
+    
+                         
+                
+                    </div>
+                </div>
+            </header>
+    
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="vertical-menu">
+    
+                <div data-simplebar class="h-100">
+    
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        
+                    </div>
+                    <!-- Sidebar -->
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+    
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+    
+                <div class="page-content">
+                    <div class="container-fluid">
+    
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box d-flex align-items-center justify-content-between">
+                                    <h4 class="mb-0 font-size-18">   </h4>   </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="ml-auto" style="margin: 0 auto; width: 400px; text-align: center;">
+                                            <div class="container mt-5"> 
+                                                <div id="question"></div>
+                                                <input type="text" id="answer" placeholder="Enter your answer">
+                                                <button onclick="checkAnswer()" class="btn btn-primary">Submit</button>
+                                                <button onclick="generateQuestion()" class="btn btn-success">New </button>
+                                                <div id="result"></div> 
+                                            </div>
+                                      
+                                    </div>
+                                    </div>
+                                    </div>
+
+
+                            </div>
+                        </div>
+                        <!-- end page title -->
+    
+                         
+    
+    
+                    </div> <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->
+    
+    
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                2025   
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="text-sm-right d-none d-sm-block">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- end main content-->
+    
+        </div>
+        <!-- END layout-wrapper -->
+    
+        <!-- JAVASCRIPT -->
+       
+        <script defer src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script defer src="assets/libs/metismenu/metisMenu.min.js"></script>
+        <script defer src="assets/libs/simplebar/simplebar.min.js"></script>
+        <script defer src="assets/libs/node-waves/waves.min.js"></script>
+    
+        <script defer src="assets/js/app.js"></script>
+    
+        <script     >
+            let num1, num2;
+
+// Function to generate a random addition question
+function generateQuestion() {
+    num1 = Math.floor(Math.random() * 10) + 1; // Random number between 1 and 100
+    num2 = Math.floor(Math.random() * 10) + 1; // Random number between 1 and 100
+    document.getElementById('question').innerText = `What is ${num1} + ${num2}?`;
+    document.getElementById('result').innerText = ''; 
+    document.getElementById('answer').value = '';
+}
+
+// Function to check the answer
+function checkAnswer() {
+    const userAnswer = parseInt(document.getElementById('answer').value);
+    const correctAnswer = num1 + num2;
+    if (userAnswer === correctAnswer) {
+        document.getElementById('result').innerText = 'Correct!';
+        document.getElementById('result').classList = 'success';
+     
+    } else {
+        document.getElementById('result').innerText = 'Incorrect. Try again!';
+        document.getElementById('result').classList = 'error';
+        
+    }
+}
+
+
+          $(document).ready(function(){
+
+           $('#sidebar-menu').load('./header.html')
+
+// Initialize the first question
+generateQuestion();
+
+          })
+        </script>
+
+    </body>
+
+
+    
+
+</html>
