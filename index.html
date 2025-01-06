@@ -33,9 +33,8 @@
         <meta name="msapplication-square150x150logo" content="images/icons/mstile-150x150.png">
         <meta name="msapplication-wide310x150logo" content="images/icons/mstile-310x150.png">
         <meta name="msapplication-square310x310logo" content="images/icons/mstile-310x310.png">
-
-        <link rel="stylesheet" href="vendor/bootstrap.min.css">
-        <script defer src="vendor/jquery.min.js"></script>
+ 
+        <script      src="vendor/jquery.min.js"></script>
         <script defer src="main.js"></script>
 
         <style>
@@ -51,9 +50,7 @@
             }
         </style>
  <style>
-    body {
-        font-family: Arial, sans-serif;
-    }
+ 
     .list-container {
         display: flex;
         flex-wrap: wrap;
@@ -68,7 +65,7 @@
         list-style-type: none;
         padding: 0;
     }
-    span {
+    .list-container span {
         margin: 5px 0;
         padding: 10px;
         text-align: center;
@@ -80,85 +77,180 @@
         padding: 10px 20px;
         font-size: 16px;
     }
+    
 </style>
+
+
+    <!-- Bootstrap Css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+
     </head>
 
-    <body>
+    <body data-sidebar="dark">
 
-        <!-- Nav Header -->
-        <header class="navbar sticky-top navbar-expand bg-primary navbar-white text-white">
-            <!-- Logo -->
-            
- 
-
-            <nav class="navbar navbar-expand-lg navbar-light  ">
-                <a class="navbar-brand" href="index.html"> Home  </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                  <ul class="navbar-nav">
-           <li class="nav-item active">
-                      <a class="nav-link" href="code.html"> Number Game</a>
-                    </li> 
-                    <li class="nav-item  ">
-                        <a class="nav-link" href="sum.html"> Addition</a>
-                      </li> 
-                 
-                   
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" 
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Menu  
-                           
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="code.html">Number Game</a> 
-                      </div>
-                    </li>
-                  </ul>
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+    
+            <header id="page-topbar">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box">
+    
+                            <a href="index.html" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="assets/images/logo-sm-light.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="assets/images/logo-light.png" alt="" height="20">
+                                </span>
+                            </a>
+                        </div>
+    
+                        <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">
+                            <i class="mdi mdi-backburger"></i>
+                        </button>
+    
+                    </div>
+    
+                    <div class="d-flex">
+    
+                         
+                
+                    </div>
                 </div>
-              </nav>
+            </header>
+    
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="vertical-menu">
+    
+                <div data-simplebar class="h-100">
+    
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        
+                    </div>
+                    <!-- Sidebar -->
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+    
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+    
+                <div class="page-content">
+                    <div class="container-fluid">
+    
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box d-flex align-items-center justify-content-between">
+                                    <h4 class="mb-0 font-size-18">   </h4>   </div>
 
-        </header>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="ml-auto" style="margin: 0 auto; width: 400px; text-align: center;">
+                                      <div class="list-container mb-3" id="listContainer"></div>
 
-        <div class="list-container" id="listContainer"></div>
-        <button onclick="generateRandomLists()" style="background-color: blue; color: #fff; border: none; cursor: pointer;">Generate   New</button>
-        
+                                      <button onclick="generateRandomLists()" style="background-color: blue; color: #fff; border: none; cursor: pointer;">Generate   New</button>
+                                      
+                                    </div>
+                                    </div>
+                                    </div>
+
+
+                            </div>
+                        </div>
+                        <!-- end page title -->
     
-        <script>
-            const colors = [ "#FF4500", "#FFD700", "#FF00FF",   "#32CD32",  "#0000CD", "#FF0000", "#000000" , "#bcbcbc",   "#32CD32",  "#0000CD", "#FF0000"];
+                         
     
-            const colors1 = [ "Red", "Green", "Grey",   "Brown",  "Black", "Yellow", "Orange", "Purple",  "Pink","Red", "Yellow","Orange", "Green"];
     
-            function generateRandomLists() {
-                const container = document.getElementById("listContainer");
-                container.innerHTML = ""; // Clear the container
+                    </div> <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->
     
-                const randomColor = [...colors].sort(() => Math.random() - 0.5);
-                const randomColorText = [...colors1].sort(() => Math.random() - 0.5);
-     
-                const listDiv = document.createElement("div");
-                    listDiv.className = "list";
     
-                    const ul = document.createElement("ul");
-                for (let i = 0; i < 30; i++) {
-                   
-                    
-                      
-                        const li = document.createElement("span");
-                        li.textContent = randomColorText[i]+", ";
-                        li.style.color = randomColor[i].toLowerCase();
-                       // li.style.color = randomColor.toLowerCase() === "black" ? "white" : "black";
-                        ul.appendChild(li);
-                  
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                2025   
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="text-sm-right d-none d-sm-block">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- end main content-->
     
-                    listDiv.appendChild(ul);
-                    container.appendChild(listDiv);
-                }
-            }
+        </div>
+        <!-- END layout-wrapper -->
     
-            generateRandomLists();
+        <!-- JAVASCRIPT -->
+       
+        <script defer src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script defer src="assets/libs/metismenu/metisMenu.min.js"></script>
+        <script defer src="assets/libs/simplebar/simplebar.min.js"></script>
+        <script defer src="assets/libs/node-waves/waves.min.js"></script>
+    
+        <script defer src="assets/js/app.js"></script>
+    
+        <script     >
+             const colors = [ "#FF4500", "#FFD700", "#FF00FF",   "#32CD32",  "#0000CD", "#FF0000", "#000000" , "#bcbcbc",   "#32CD32",  "#0000CD", "#FF0000"];
+    
+    const colors1 = [ "Red", "Green", "Grey",   "Brown",  "Black", "Yellow", "Orange", "Purple",  "Pink","Red", "Yellow","Orange", "Green"];
+
+    function generateRandomLists() {
+        const container = document.getElementById("listContainer");
+        container.innerHTML = ""; // Clear the container
+
+        const randomColor = [...colors].sort(() => Math.random() - 0.5);
+        const randomColorText = [...colors1].sort(() => Math.random() - 0.5);
+
+        const listDiv = document.createElement("div");
+            listDiv.className = "list";
+
+            const ul = document.createElement("ul");
+        for (let i = 0; i < 11; i++) {
+           
+            
+              
+                const li = document.createElement("span");
+                li.textContent = randomColorText[i]+", ";
+                li.style.color = randomColor[i]?randomColor[i].toLowerCase():randomColor[i];
+               // li.style.color = randomColor.toLowerCase() === "black" ? "white" : "black";
+                ul.appendChild(li);
+          
+
+            listDiv.appendChild(ul);
+            container.appendChild(listDiv);
+        }
+    }
+
+          $(document).ready(function(){
+
+           $('#sidebar-menu').load('./header.html')
+
+    generateRandomLists();
+
+          })
         </script>
+
     </body>
+
+
+    
 
 </html>

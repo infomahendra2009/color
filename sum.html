@@ -33,12 +33,22 @@
         <meta name="msapplication-square150x150logo" content="images/icons/mstile-150x150.png">
         <meta name="msapplication-wide310x150logo" content="images/icons/mstile-310x150.png">
         <meta name="msapplication-square310x310logo" content="images/icons/mstile-310x310.png">
-
-        <link rel="stylesheet" href="vendor/bootstrap.min.css">
-        <script defer src="vendor/jquery.min.js"></script>
+ 
+        <script      src="vendor/jquery.min.js"></script>
         <script defer src="main.js"></script>
 
         <style>
+            .spinner {
+                animation-name: spin;
+                animation-duration: 2000ms;
+                animation-iteration-count: infinite; 
+                animation-timing-function: linear;
+            }
+            @keyframes spin {
+                from { transform:rotate(0deg); }
+                to {transform:rotate(360deg); }
+            }
+        </style>  <style>
             .spinner {
                 animation-name: spin;
                 animation-duration: 2000ms;
@@ -65,114 +75,180 @@
         #answer{ }
 
         </style>
- <style>
-    body {
-        font-family: Arial, sans-serif;
-    }
-    .list-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-    .list {
-        border: 1px solid #ccc;
-        padding: 10px;
-        width: 400px;
-    }
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-    span {
-        margin: 5px 0;
-        padding: 10px;
-        text-align: center;
-        font-size: 24px; text-transform: uppercase; font-weight: bold; letter-spacing: 0.2px ; line-height: 31px;
-        color: white; /* Default color */
-    }
-    button {
-        margin: 20px 0;
-        padding: 10px 20px;
-        font-size: 16px;
-    }
-</style>
+  
+
+
+    <!-- Bootstrap Css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+
     </head>
 
-    <body>
+    <body data-sidebar="dark">
 
-        <!-- Nav Header -->
-        <header class="navbar sticky-top navbar-expand bg-primary navbar-white text-white">
-            <!-- Logo -->
-            
- 
-
-            <nav class="navbar navbar-expand-lg navbar-light  ">
-                <a class="navbar-brand" href="index.html"> Home  </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                  <ul class="navbar-nav">
-           <li class="nav-item active">
-                      <a class="nav-link" href="code.html"> Number Game</a>
-                    </li> 
-           <li class="nav-item active">
-                      <a class="nav-link" href="sum.html"> Addition</a>
-                    </li> 
-                 
-                   
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" 
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Menu  
-                           
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="code.html">Number Game</a> 
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </nav>
-
-        </header>
-
-    <div class="container mt-5"> 
-    <div id="question"></div>
-    <input type="text" id="answer" placeholder="Enter your answer">
-    <button onclick="checkAnswer()" class="btn btn-primary">Submit</button>
-    <button onclick="generateQuestion()" class="btn btn-success">New </button>
-    <div id="result"></div> 
-</div>
-    <script>
-        let num1, num2;
-
-        // Function to generate a random addition question
-        function generateQuestion() {
-            num1 = Math.floor(Math.random() * 100) + 1; // Random number between 1 and 100
-            num2 = Math.floor(Math.random() * 10) + 1; // Random number between 1 and 100
-            document.getElementById('question').innerText = `What is ${num1} + ${num2}?`;
-            document.getElementById('result').innerText = ''; 
-            document.getElementById('answer').value = '';
-        }
-
-        // Function to check the answer
-        function checkAnswer() {
-            const userAnswer = parseInt(document.getElementById('answer').value);
-            const correctAnswer = num1 + num2;
-            if (userAnswer === correctAnswer) {
-                document.getElementById('result').innerText = 'Correct!';
-                document.getElementById('result').classList = 'success';
-             
-            } else {
-                document.getElementById('result').innerText = 'Incorrect. Try again!';
-                document.getElementById('result').classList = 'error';
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+    
+            <header id="page-topbar">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box">
+    
+                            <a href="index.html" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="assets/images/logo-sm-light.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="assets/images/logo-light.png" alt="" height="20">
+                                </span>
+                            </a>
+                        </div>
+    
+                        <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">
+                            <i class="mdi mdi-backburger"></i>
+                        </button>
+    
+                    </div>
+    
+                    <div class="d-flex">
+    
+                         
                 
-            }
-        }
+                    </div>
+                </div>
+            </header>
+    
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="vertical-menu">
+    
+                <div data-simplebar class="h-100">
+    
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        
+                    </div>
+                    <!-- Sidebar -->
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+    
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+    
+                <div class="page-content">
+                    <div class="container-fluid">
+    
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box d-flex align-items-center justify-content-between">
+                                    <h4 class="mb-0 font-size-18">   </h4>   </div>
 
-        // Initialize the first question
-        generateQuestion();
-    </script>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="ml-auto" style="margin: 0 auto; width: 400px; text-align: center;">
+                                            <div class="container mt-5"> 
+                                                <div id="question"></div>
+                                                <input type="text" id="answer" placeholder="Enter your answer">
+                                                <button onclick="checkAnswer()" class="btn btn-primary">Submit</button>
+                                                <button onclick="generateQuestion()" class="btn btn-success">New </button>
+                                                <div id="result"></div> 
+                                            </div>
+                                      
+                                    </div>
+                                    </div>
+                                    </div>
+
+
+                            </div>
+                        </div>
+                        <!-- end page title -->
+    
+                         
+    
+    
+                    </div> <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->
+    
+    
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                2025   
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="text-sm-right d-none d-sm-block">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- end main content-->
+    
+        </div>
+        <!-- END layout-wrapper -->
+    
+        <!-- JAVASCRIPT -->
+       
+        <script defer src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script defer src="assets/libs/metismenu/metisMenu.min.js"></script>
+        <script defer src="assets/libs/simplebar/simplebar.min.js"></script>
+        <script defer src="assets/libs/node-waves/waves.min.js"></script>
+    
+        <script defer src="assets/js/app.js"></script>
+    
+        <script     >
+            let num1, num2;
+
+// Function to generate a random addition question
+function generateQuestion() {
+    num1 = Math.floor(Math.random() * 100) + 1; // Random number between 1 and 100
+    num2 = Math.floor(Math.random() * 10) + 1; // Random number between 1 and 100
+    document.getElementById('question').innerText = `What is ${num1} + ${num2}?`;
+    document.getElementById('result').innerText = ''; 
+    document.getElementById('answer').value = '';
+}
+
+// Function to check the answer
+function checkAnswer() {
+    const userAnswer = parseInt(document.getElementById('answer').value);
+    const correctAnswer = num1 + num2;
+    if (userAnswer === correctAnswer) {
+        document.getElementById('result').innerText = 'Correct!';
+        document.getElementById('result').classList = 'success';
+     
+    } else {
+        document.getElementById('result').innerText = 'Incorrect. Try again!';
+        document.getElementById('result').classList = 'error';
+        
+    }
+}
+
+
+          $(document).ready(function(){
+
+           $('#sidebar-menu').load('./header.html')
+
+// Initialize the first question
+generateQuestion();
+
+          })
+        </script>
+
     </body>
+
+
+    
 
 </html>
