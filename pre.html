@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <title>Giphygram</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=0, user-scalable=0">
+
+        <link rel="manifest" href="manifest.json">
+
+        <meta name="apple-mobile-web-app-title" content="Giphygram">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="apple-touch-startup-image" href="images/launch.png">
+
+        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/icons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/icons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/icons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/icons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon-precomposed" sizes="60x60" href="images/icons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/icons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="images/icons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/icons/apple-touch-icon-152x152.png">
+        <link rel="icon" type="image/png" href="images/icons/favicon-196x196.png" sizes="196x196">
+        <link rel="icon" type="image/png" href="images/icons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="images/icons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="images/icons/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="images/icons/favicon-128.png" sizes="128x128">
+
+        <meta name="msapplication-TileColor" content="#2D91F8">
+        <meta name="msapplication-TileImage" content="images/icons/mstile-144x144.png">
+        <meta name="msapplication-square70x70logo" content="images/icons/mstile-70x70.png">
+        <meta name="msapplication-square150x150logo" content="images/icons/mstile-150x150.png">
+        <meta name="msapplication-wide310x150logo" content="images/icons/mstile-310x150.png">
+        <meta name="msapplication-square310x310logo" content="images/icons/mstile-310x310.png">
+ 
+        <script      src="vendor/jquery.min.js"></script>
+        <script defer src="main.js"></script>
+
+        <style>
+            .spinner {
+                animation-name: spin;
+                animation-duration: 2000ms;
+                animation-iteration-count: infinite; 
+                animation-timing-function: linear;
+            }
+            @keyframes spin {
+                from { transform:rotate(0deg); }
+                to {transform:rotate(360deg); }
+            }
+        </style>
+ <style>
+ 
+    .list-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .list {
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 400px;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .list-container span {
+        margin: 5px 0;
+        padding: 10px;
+        text-align: center;
+        font-size: 24px; text-transform: uppercase; font-weight: bold; letter-spacing: 0.2px ; line-height: 31px;
+        color: white; /* Default color */
+    }
+    button {
+        margin: 20px 0;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    
+</style>
+
+
+    <!-- Bootstrap Css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    <style>
+      
+        .quiz-container {
+          width: 60%;
+          background: #fff;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          border-radius: 8px;
+          padding: 20px;
+          text-align: center;
+        }
+        select, button {
+          margin: 10px;
+          padding: 10px;
+          font-size: 16px;
+        }
+        #timer {
+          color: red;
+        }
+        #questionContainer label{ border-radius: 3px; background-color: #f8f8f8; border: 1px #ccc solid; margin: 0 5px; padding: 5px;}
+        .btn{ border-radius: 3px; background-color: blue; color: #fff; border: none;  padding: 10px 20px; display: inline-block; margin: 20px auto;}
+      </style>
+    </head>
+
+    <body data-sidebar="dark">
+
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+    
+            <header id="page-topbar">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box">
+    
+                            <a href="index.html" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="assets/images/logo-sm-light.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="assets/images/logo-light.png" alt="" height="20">
+                                </span>
+                            </a>
+                        </div>
+    
+                        <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">
+                            <i class="mdi mdi-backburger"></i>
+                        </button>
+    
+                    </div>
+    
+                    <div class="d-flex">
+    
+                         
+                
+                    </div>
+                </div>
+            </header>
+    
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="vertical-menu">
+    
+                <div data-simplebar class="h-100">
+    
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        
+                    </div>
+                    <!-- Sidebar -->
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+    
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+    
+                <div class="page-content">
+                    <div class="container-fluid">
+    
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box d-flex align-items-center justify-content-between">
+                                    <h4 class="mb-0 font-size-18">   </h4>   </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="ml-auto" style="margin: 0 auto; width: 400px; text-align: center;">
+                                      
+                                            <div>
+                                                <label for="quizSelect">Choose a Quiz:</label>
+                                                <select id="quizSelect">
+                                                  <option value="">-- Select --</option>
+                                                  <option value="json/quiz_1.json">Prepositions  </option>
+                                                  <option value="json/quiz_2.json">Quiz 2</option> 
+                                                </select>
+                                              </div>
+                                            
+                                              <div class="quiz-container" style="display: none;" id="quizContainer">
+                                                <div id="questionCount"></div>
+                                                <div id="timer">Time left: 30 seconds</div>
+                                                <div id="questionContainer"></div>
+                                                <div id="result"></div> 
+                                                <button id="submitButton" onclick="submitAnswer()" class="btn">Submit Answer</button>
+                                                <button id="finishButton" class="btn" style="display: none;" onclick="showSummary()">Finish Quiz</button>
+                                              </div>
+                                            
+                                             
+                                    </div>
+                                    </div>
+                                    </div>
+
+
+                            </div>
+                        </div>
+                        <!-- end page title -->
+    
+                         
+    
+    
+                    </div> <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->
+    
+    
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                2025   
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="text-sm-right d-none d-sm-block">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- end main content-->
+    
+        </div>
+        <!-- END layout-wrapper -->
+    
+        <!-- JAVASCRIPT -->
+       
+        <script defer src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script defer src="assets/libs/metismenu/metisMenu.min.js"></script>
+        <script defer src="assets/libs/simplebar/simplebar.min.js"></script>
+        <script defer src="assets/libs/node-waves/waves.min.js"></script>
+    
+        <script defer src="assets/js/app.js"></script>
+    
+        <script>
+            let quizData = {};
+            let currentQuestionIndex = 0;
+            let score = 0;
+            let timer = 30;
+            let timerInterval = null;
+        
+            document.getElementById('quizSelect').addEventListener('change', function () {
+              const selectedQuiz = this.value;
+              if (selectedQuiz) {
+                fetch(selectedQuiz)
+                  .then(response => response.json())
+                  .then(data => {
+                    quizData = data;
+                    document.getElementById('quizContainer').style.display = 'block';
+                    resetQuiz();
+                    loadQuestion();
+                  });
+              } else {
+                document.getElementById('quizContainer').style.display = 'none';
+              }
+            });
+        
+            function resetQuiz() {
+              currentQuestionIndex = 0;
+              score = 0;
+              if (timerInterval) clearInterval(timerInterval);
+            }
+        
+            function updateQuestionCount() {
+              document.getElementById('questionCount').innerText = `Question: ${currentQuestionIndex + 1} / ${quizData.quiz.length}`;
+            }
+        
+            function loadQuestion() {
+              if (timerInterval) clearInterval(timerInterval);
+        
+              if (currentQuestionIndex >= quizData.quiz.length) {
+                showSummary();
+                return;
+              }
+        
+              timer = 30;
+              const currentQuestion = quizData.quiz[currentQuestionIndex];
+              document.getElementById('questionContainer').innerHTML = `
+                <div>
+                  <p>${currentQuestion.question}</p>
+                  ${currentQuestion.options.map(opt => `
+                    <label>
+                      <input type="radio" name="answer" value="${opt}" />
+                      ${opt}
+                    </label> 
+                  `).join('')}
+                </div>
+              `;
+              updateQuestionCount();
+        
+              document.getElementById('timer').innerText = `Time left: ${timer} seconds`;
+              timerInterval = setInterval(() => {
+                timer--;
+                document.getElementById('timer').innerText = `Time left: ${timer} seconds`;
+                if (timer <= 0) {
+                  clearInterval(timerInterval);
+                  showAnswer(false); // Time's up, show the answer.
+                }
+              }, 1000);
+            }
+        
+            function submitAnswer() {
+              const selectedOption = document.querySelector('input[name="answer"]:checked');
+              if (!selectedOption) {
+                alert("Please select an option!");
+                return;
+              }
+              const isCorrect = selectedOption.value === quizData.quiz[currentQuestionIndex].answer;
+              showAnswer(isCorrect);
+            }
+        
+            function showAnswer(isCorrect) {
+              clearInterval(timerInterval);
+              if (isCorrect) {
+                score++;
+                document.getElementById('result').innerText = "Correct!";
+              } else {
+                document.getElementById('result').innerText = `Wrong! The correct answer is: ${quizData.quiz[currentQuestionIndex].answer}`;
+              }
+        
+              setTimeout(() => {
+                document.getElementById('result').innerText = '';
+                currentQuestionIndex++;
+                loadQuestion();
+              }, 2000); // Wait 2 seconds before loading the next question.
+            }
+        
+            function showSummary() {
+              clearInterval(timerInterval);
+              document.getElementById('submitButton').style.display = 'none';
+              document.getElementById('questionContainer').style.display = 'none';
+              document.getElementById('timer').style.display = 'none';
+              document.getElementById('questionCount').style.display = 'none';
+        
+              const resultMessage = `<h3>Quiz Completed!</h3><p>You scored ${score} out of ${quizData.quiz.length}.</p>`;
+              document.getElementById('result').innerHTML = resultMessage;
+            }
+         
+
+          $(document).ready(function(){
+
+           $('#sidebar-menu').load('./header.html')
+ 
+
+          })
+        </script>
+
+    </body>
+
+
+    
+
+</html>

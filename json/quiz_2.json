@@ -1,0 +1,6 @@
+{
+  "quiz": [
+    { "id": 1, "question": "What is the largest planet?", "options": ["Earth", "Mars", "Jupiter", "Saturn"], "answer": "Jupiter" },
+    { "id": 2, "question": "What is the chemical symbol for water?", "options": ["H", "H2O", "O2", "HO"], "answer": "H2O" }
+  ]
+}

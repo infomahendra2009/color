@@ -1,0 +1,204 @@
+{
+  "quiz": [
+    {
+      "question": "Choose the correct preposition: She is sitting ___ the table.",
+      "options": [
+        "in",
+        "on",
+        "under",
+        "by"
+      ],
+      "answer": "on"
+    },
+    {
+      "question": "Which preposition fits: The cat jumped ___ the fence.",
+      "options": [
+        "over",
+        "under",
+        "through",
+        "by"
+      ],
+      "answer": "over"
+    },
+    {
+      "question": "Choose the correct preposition: He went ___ the park.",
+      "options": [
+        "to",
+        "in",
+        "at",
+        "on"
+      ],
+      "answer": "to"
+    },
+    {
+      "question": "Which preposition is correct: The ball is ___ the box.",
+      "options": [
+        "on",
+        "in",
+        "under",
+        "around"
+      ],
+      "answer": "in"
+    },
+    {
+      "question": "Choose the correct preposition: The bird is flying ___ the tree.",
+      "options": [
+        "under",
+        "over",
+        "by",
+        "between"
+      ],
+      "answer": "over"
+    },
+    {
+      "question": "Choose the correct preposition: The dog is hiding ___ the couch.",
+      "options": [
+        "under",
+        "over",
+        "around",
+        "between"
+      ],
+      "answer": "under"
+    },
+    {
+      "question": "Which preposition fits: She walked ___ the door.",
+      "options": [
+        "into",
+        "through",
+        "around",
+        "by"
+      ],
+      "answer": "into"
+    },
+    {
+      "question": "Choose the correct preposition: The book is ___ the shelf.",
+      "options": [
+        "on",
+        "under",
+        "by",
+        "in"
+      ],
+      "answer": "on"
+    },
+    {
+      "question": "Which preposition fits: They live ___ a big house.",
+      "options": [
+        "in",
+        "on",
+        "under",
+        "at"
+      ],
+      "answer": "in"
+    },
+    {
+      "question": "Choose the correct preposition: The cat is sitting ___ the window.",
+      "options": [
+        "on",
+        "in",
+        "at",
+        "by"
+      ],
+      "answer": "by"
+    },
+    {
+      "question": "Which preposition is correct: The rabbit is ___ the garden.",
+      "options": [
+        "in",
+        "on",
+        "under",
+        "around"
+      ],
+      "answer": "in"
+    },
+    {
+      "question": "Choose the correct preposition: We are going ___ the beach tomorrow.",
+      "options": [
+        "to",
+        "on",
+        "at",
+        "in"
+      ],
+      "answer": "to"
+    },
+    {
+      "question": "Which preposition fits: I am sitting ___ my friend.",
+      "options": [
+        "next to",
+        "in front of",
+        "behind",
+        "on"
+      ],
+      "answer": "next to"
+    },
+    {
+      "question": "Choose the correct preposition: The dog ran ___ the street.",
+      "options": [
+        "on",
+        "in",
+        "down",
+        "across"
+      ],
+      "answer": "across"
+    },
+    {
+      "question": "Which preposition is correct: The book is lying ___ the desk.",
+      "options": [
+        "on",
+        "under",
+        "behind",
+        "around"
+      ],
+      "answer": "on"
+    },
+    {
+      "question": "Choose the correct preposition: The children are playing ___ the playground.",
+      "options": [
+        "on",
+        "in",
+        "under",
+        "by"
+      ],
+      "answer": "on"
+    },
+    {
+      "question": "Which preposition fits: The bus is arriving ___ 9 AM.",
+      "options": [
+        "in",
+        "at",
+        "on",
+        "by"
+      ],
+      "answer": "at"
+    },
+    {
+      "question": "Choose the correct preposition: She put the keys ___ the drawer.",
+      "options": [
+        "in",
+        "on",
+        "under",
+        "next to"
+      ],
+      "answer": "in"
+    },
+    {
+      "question": "Which preposition is correct: We are having dinner ___ the table.",
+      "options": [
+        "on",
+        "in",
+        "at",
+        "by"
+      ],
+      "answer": "at"
+    },
+    {
+      "question": "Choose the correct preposition: The bird flew ___ the house.",
+      "options": [
+        "into",
+        "out of",
+        "by",
+        "over"
+      ],
+      "answer": "into"
+    }
+  ]
+}
